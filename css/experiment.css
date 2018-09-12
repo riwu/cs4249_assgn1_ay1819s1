@@ -6,7 +6,7 @@ html {
 
 .label {
   display: block;
-  padding: .2em .2em .2em;
+  padding: 0.2em 0.2em 0.2em;
   font-size: 120%;
   line-height: 1;
   color: #ffffff;
@@ -15,7 +15,7 @@ html {
   vertical-align: baseline;
 }
 .label + .label {
-    margin-top: 1px;
+  margin-top: 1px;
 }
 
 .btn .label {
@@ -42,7 +42,6 @@ html {
   background-color: #d9534f;
 }
 
-
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -50,7 +49,7 @@ html {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -499,90 +498,94 @@ fieldset[disabled] .btn-link:focus {
 .btn-block + .btn-block {
   margin-top: 5px;
 }
-input[type="submit"].btn-block,
-input[type="reset"].btn-block,
-input[type="button"].btn-block {
+input[type='submit'].btn-block,
+input[type='reset'].btn-block,
+input[type='button'].btn-block {
   width: 100%;
 }
 
 /*! Custom CSS*/
-html,body { height:100%; width: 95vw }
-
-#state-container{
-  height:8%;
-}
-.row{
-  display:flex;
-  justify-content:flex-start;
-  align-items:stretch;
-  flex-wrap:nowrap;
-  margin-top:10px;
-  margin-right:20px;
-  margin-bottom:10px;
-  margin-left:20px;
-  width:100%;
-}
-.cellstate{
-  height:100%;
-  width:5%;
-  flex-grow:1;
-  flex-basis:100%;
-  padding:1px;
-}
-.cellstimulusresponse{
-  height:100%;
-  width:23%;
-  flex-grow:1;
-  flex-basis:100%;
-  padding:1px;
-}
-.cellnext{
-  height:100%;
-  width:14%;
-  flex-grow:1;
-  flex-basis:100%;
-  padding:1px;
-}
-#interaction-container{
-	border-color:#f4ad42;
-    border-size: 1px;
-    border-style: solid;
-    height:92%;;
-    width:95%;
-    position:absolute;
-      
+html,
+body {
+  height: 100%;
+  width: 95vw;
 }
 
-  #radialmenu {
-        font-family: 'stint ultra condensed', tahoma, sans-serif;
-        fill: #fff !important;
-    }
+#state-container {
+  height: 8%;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  width: 100%;
+}
+.cellstate {
+  height: 100%;
+  width: 5%;
+  flex-grow: 1;
+  flex-basis: 100%;
+  padding: 1px;
+}
+.cellstimulusresponse {
+  height: 100%;
+  width: 23%;
+  flex-grow: 1;
+  flex-basis: 100%;
+  padding: 1px;
+}
+.cellnext {
+  height: 100%;
+  width: 14%;
+  flex-grow: 1;
+  flex-basis: 100%;
+  padding: 1px;
+}
+#interaction-container {
+  border-color: #f4ad42;
+  border-size: 1px;
+  border-style: solid;
+  height: 92%;
+  width: 95%;
+  position: absolute;
+}
 
-    .mouseover {
-        opacity: 0.5;
-    }
-    body > svg > text {
-        font-size: 60px;
-        fill: #fff;
-        font-family: 'stint ultra condensed', tahoma, sans-serif;
-    }
-    .menuitem {
-        fill: #555;
-    }
-    #path_CURSOR {
-        fill:#777;
-    }
-    .curved, .radial {
-        fill: #fff;
-    }
- 
+#radialmenu {
+  font-family: 'stint ultra condensed', tahoma, sans-serif;
+  fill: #fff !important;
+}
+
+.mouseover {
+  opacity: 0.5;
+}
+body > svg > text {
+  font-size: 60px;
+  fill: #fff;
+  font-family: 'stint ultra condensed', tahoma, sans-serif;
+}
+.menuitem {
+  fill: #555;
+}
+#path_CURSOR {
+  fill: #777;
+}
+.curved,
+.radial {
+  fill: #fff;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus,
 .btn.focus,
 .btn:active.focus,
-.btn.active.focus{
- outline-style:none;
-box-shadow:none;
-border-color:transparent;
+.btn.active.focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
 }
