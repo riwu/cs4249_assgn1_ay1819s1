@@ -1,7 +1,9 @@
 'use strict';
 
+const ORDER_NUMBER = 1;
+
 // Location of data files
-const trialsFile = './data/experiments_1.csv';
+const trialsFile = './data/experiments_' + ORDER_NUMBER + '.csv';
 const menuL1File = './data/menu_depth_1.csv';
 const menuL2File = './data/menu_depth_2.csv';
 const menuL3File = './data/menu_depth_3.csv';
