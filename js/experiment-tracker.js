@@ -12,38 +12,30 @@ class ExperimentTracker {
     this.selectedItem = null;
     this.startTime = null;
     this.endTime = null;
-    this.area = {};
+    this.prevCoord = {};
+    this.distMoved = 0;
     this.captureMousePosition = this.captureMousePosition.bind(this);
   }
 
   captureMousePosition(e) {
-    if (this.area.x1 === undefined) {
-      this.area = {
-        x1: e.screenX,
-        x2: e.screenX,
-        y1: e.screenY,
-        y2: e.screenY
-      };
-      return;
+    if (this.prevCoord.x !== undefined) {
+      this.distMoved += Math.hypot(
+        e.screenX - this.prevCoord.x,
+        e.screenY - this.prevCoord.y
+      );
     }
 
-    if (e.screenX < this.area.x1) {
-      this.area.x1 = e.screenX;
-    } else if (e.screenX > this.area.x2) {
-      this.area.x2 = e.screenX;
-    }
-
-    if (e.screenY < this.area.y1) {
-      this.area.y1 = e.screenY;
-    } else if (e.screenY > this.area.y2) {
-      this.area.y2 = e.screenY;
-    }
+    this.prevCoord = {
+      x: e.screenX,
+      y: e.screenY
+    };
   }
 
   resetTimers() {
     this.startTime = null;
     this.endTime = null;
-    this.area = {};
+    this.prevCoord = {};
+    this.distMoved = 0;
     document.removeEventListener('mousemove', this.captureMousePosition);
   }
 
@@ -70,10 +62,7 @@ class ExperimentTracker {
       this.selectedItem,
       this.startTime,
       this.endTime,
-      this.area.x1,
-      this.area.x2,
-      this.area.y1,
-      this.area.y2
+      this.distMoved
     ]);
     this.resetTimers();
     this.attempt++;
@@ -85,7 +74,7 @@ class ExperimentTracker {
 
   toCsv() {
     var csvFile =
-      'Trial,Attempt,Menu Type,Menu Depth,Pointing Device,Target Item,Selected Item,Start Time, End Time,Area X1,Area X2,Area Y1,Area Y2\n';
+      'Trial,Attempt,Menu Type,Menu Depth,Pointing Device,Target Item,Selected Item,Start Time, End Time,Distance moved\n';
     for (var i = 0; i < this.trials.length; i++) {
       csvFile += this.trials[i].join(',');
       csvFile += '\n';
